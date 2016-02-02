@@ -1,0 +1,9 @@
+﻿body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+header, footer {
+
+    background-color: #008b8b;
+    color: #fff; 
+}
