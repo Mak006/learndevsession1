@@ -4,6 +4,61 @@
 
 header, footer {
 
-    background-color: #008b8b;
+    background-color: #26549c;
     color: #fff; 
+}
+
+.navbar-default {
+    background-color: #26549c;
+    border: 0px;
+}
+
+.navbar-default .navbar-brand {
+    color: #fff;
+}
+.navbar-default .navbar-nav > li > a {
+    color: #fff;
+}
+
+.profile, .main {
+    border: solid 1px #000;
+    margin-bottom: 15px;
+}
+
+/* FRIENDS */
+.friends {
+    margin-bottom: 15px;
+}
+.friend {
+    border: solid 1px #a0a0a0;
+    box-shadow: 3px 3px 10px #c0c0c0;
+    padding: 4px;
+    margin-bottom: 10px; 
+}
+.friend-initials {
+    background-color: #00bfff;
+    color: #fff;
+    height: 44px;
+    width: 44px;
+    float: left;
+}
+
+.friend-initials > h4 {
+    padding-top: 2px;
+    text-align: center;
+    font-weight: bold;
+}
+.friend-name {
+    float: right;
+    font-weight: bold;
+    font-size: larger;
+    padding-top: 8px;
+    padding-right: 4px;
+    text-wrap: normal;
+}
+.friend-details {
+    clear: both;
+    text-align: right;
+    font-size: smaller;
+    padding-top: 4px;
 }
