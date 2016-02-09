@@ -20,11 +20,17 @@ header, footer {
     color: #fff;
 }
 
-.profile, .main {
+.main {
     border: solid 1px #000;
     margin-bottom: 15px;
 }
-
+.profile {
+    border: solid 1px #a0a0a0;
+    margin-bottom: 15px;
+    padding: 8px;
+    box-shadow: 3px 3px 10px #c0c0c0;
+    margin-top: 20px;
+}
 /* FRIENDS */
 .friends {
     margin-bottom: 15px;
@@ -61,4 +67,34 @@ header, footer {
     text-align: right;
     font-size: smaller;
     padding-top: 4px;
+}
+
+/* PROFILE */
+.profile-background {
+    /*background-image: url('../images/profile-background.jpg');*/
+    height: 80px;
+    background-size: cover;
+    background-position: center;
+    margin: -10px -10px 0 -10px;
+}
+
+.profile-initials {
+    border: solid 1px;
+    height: 60px;
+    width: 60px;
+    background-color: #26549c;
+    color: #fff;
+    text-align: center;
+    margin-top: -25px;
+    float: left;
+}
+.profile-initials > h2 {
+    margin-top: 10px;
+}
+.profile-name {
+    font-size: x-large;
+}
+.profile-description {
+        clear: both;
+    padding-top: 10px;
 }

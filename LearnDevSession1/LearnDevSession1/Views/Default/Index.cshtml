@@ -45,8 +45,39 @@
         <section class="col-sm-6 col-sm-push-3 col-md-7 col-md-push-3 main">
             MAIN
         </section>
-        <aside class="col-sm-3 col-sm-pull-6 col-md-3 col-md-pull-7 profile">
-            PROFILE
+        <aside class="col-sm-3 col-sm-pull-6 col-md-pull-7">
+            <div class="profile">
+                <div class="profile-background" style="background-image:url('@Url.Content("~/images/profile-background.jpg")')">
+                </div>
+                <div class="img-circle profile-initials">
+                    <h2>AB</h2>
+                </div>
+                <div class="profile-name">
+                    Aman Beg
+                </div>
+                <div class="profile-description">lorem ipsum....</div>
+                <div>
+                    <label>Courses</label>
+                    <p class="form-control-static">14</p>
+                    <input type="text" value="14" class="form-control hidden" />
+                </div>
+                <div>
+                    <label>Articles</label>
+                    <p class="form-control-static">10</p>
+                    <input type="text" value="10" class="form-control hidden"/>
+                </div>
+                <div class="profile-buttons row">
+                    <div class="col-md-6 col-md-push-6">
+                        <button class="btn btn-primary btn-block">Edit</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button class="btn btn-primary btn-block hidden">Save</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button class="btn btn-danger btn-block hidden">Cancel</button>
+                    </div>
+                </div>
+            </div>
         </aside>
         <aside class="col-sm-3 col-md-2 friends">
             <h2>FRIENDS</h2>
