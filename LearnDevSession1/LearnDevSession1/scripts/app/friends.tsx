@@ -9,7 +9,8 @@ interface IFriendProps {
     initials: string,
     name: string,
     courseCount: number,
-    articleCount: number
+    articleCount: number,
+    key?:number
 }
 
 interface IFriendsProps {
@@ -37,7 +38,7 @@ class Friends extends React.Component<IFriendsProps, {}> {
     render() {
         let friendsList:any[] = [];
         this.props.initialData.forEach((frd, idx) => {
-            friendsList.push(<FriendCard initials={frd.initials} name={frd.name} courseCount={frd.courseCount} articleCount={frd.articleCount}  />);
+            friendsList.push(<FriendCard key={frd.id} initials={frd.initials} name={frd.name} courseCount={frd.courseCount} articleCount={frd.articleCount}  />);
         });
 
 
@@ -51,8 +52,8 @@ class Friends extends React.Component<IFriendsProps, {}> {
 
 var friendsData: IFriendProps[] = [
     { id: 1, name: "Homer Simpson", initials: "HS", courseCount: 32, articleCount: 19 },
-    { id: 1, name: "Marge Simpson", initials: "MS", courseCount: 22, articleCount: 13 },
-    { id: 1, name: "Bart Simpson", initials: "BS", courseCount: 12, articleCount: 10 }
+    { id: 2, name: "Marge Simpson", initials: "MS", courseCount: 22, articleCount: 13 },
+    { id: 3, name: "Bart Simpson", initials: "BS", courseCount: 12, articleCount: 10 }
 ];
 
 ReactDOM.render(<Friends initialData={friendsData} />, document.getElementById('friendsNode'));

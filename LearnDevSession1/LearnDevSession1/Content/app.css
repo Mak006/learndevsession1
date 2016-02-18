@@ -19,9 +19,17 @@ header, footer {
 .navbar-default .navbar-nav > li > a {
     color: #fff;
 }
-
+.nav.navbar-nav.navbar-right {
+    margin-right: 5px;
+}
+.content {
+    margin-top: 50px;
+}
 .anchor {
     visibility: hidden;
+    top: -50px;
+    display:block;
+    position: relative;
 }
 
 .main {
@@ -107,6 +115,7 @@ header, footer {
 .main-container {
     background-size: cover;
     background-position: center;
+    padding-bottom: 20px;
 }
 
 .main-container > h2 {
@@ -115,14 +124,15 @@ header, footer {
 .record {
     margin-left: 15px;
     margin-right: 15px;
-    opacity: 0.8;
-    background-color: #fff;
+    background-color: rgba(255 ,255, 255, 0.8);
     display: flex;
     -ms-flex-direction: row-reverse;
     flex-direction: row-reverse;
 }
 .record-detail {
+    flex-grow: 1;
 }
+
 .record-rating {
     font-size: x-large;
     font-weight: bold;
@@ -137,8 +147,14 @@ header, footer {
 
 @media (min-width: 768px) {
     .record {
+        display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
         flex-direction: row;
         -ms-flex-direction: row;
+        justify-content: space-between;
     }
     .record-rating {
         font-size: xx-large;
