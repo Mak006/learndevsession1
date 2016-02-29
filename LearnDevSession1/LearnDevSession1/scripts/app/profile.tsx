@@ -3,14 +3,14 @@
 // https://github.com/Microsoft/TypeScript/wiki/JSX
 
 
-interface IProfileTextBoxProp {
+export interface IProfileTextBoxProp {
     value: number,
     editable: boolean,
     onChange(e: any)
 }
 
 
-class ProfileTextBox extends React.Component<IProfileTextBoxProp, {}> {
+export class ProfileTextBox extends React.Component<IProfileTextBoxProp, {}> {
 
 
 
@@ -26,13 +26,13 @@ class ProfileTextBox extends React.Component<IProfileTextBoxProp, {}> {
     }
 }
 
-interface IProfileButtonProp {
+export interface IProfileButtonProp {
     onClick(e: React.MouseEvent),
     label: string,
     iconClass: string
 }
 
-class ProfileButton extends React.Component<IProfileButtonProp, {}> {
+export class ProfileButton extends React.Component<IProfileButtonProp, {}> {
     render() {
         return (
             <button className={"btn btn-block " + this.props.iconClass} onClick={this.props.onClick}>{this.props.label}</button>
@@ -40,15 +40,15 @@ class ProfileButton extends React.Component<IProfileButtonProp, {}> {
     }
 }
 
-interface IProfileProp {
+export interface IProfileProp {
     
 }
-interface IProfileState {
+export interface IProfileState {
     courses?: number,
     articles?: number,
     editable?: boolean
 }
-class Profile extends React.Component<IProfileProp, IProfileState> {
+export class Profile extends React.Component<IProfileProp, IProfileState> {
     constructor(args) {
         super(args);
         this.state = {
@@ -109,4 +109,3 @@ class Profile extends React.Component<IProfileProp, IProfileState> {
 }
 
 
-ReactDOM.render(<Profile />, document.getElementById('profileNode'));

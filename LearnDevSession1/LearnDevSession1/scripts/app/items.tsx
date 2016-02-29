@@ -4,7 +4,7 @@
 
 /// <reference path="../../typings/react/react-global.d.ts" />
 
-interface IItemProp {
+export interface IItemProp {
     title: string,
     description: string,
     rating: number,
@@ -12,11 +12,11 @@ interface IItemProp {
     key?:number
 }
 
-interface IItemsState {
+export interface IItemsState {
     items: IItemProp[]
 }
 
-class ItemCard extends React.Component<IItemProp, {}> {
+export class ItemCard extends React.Component<IItemProp, {}> {
     formatRating() {
         return this.props.rating.toFixed(1);
     }
@@ -40,7 +40,7 @@ class ItemCard extends React.Component<IItemProp, {}> {
     }
 }
 
-class ItemsCard extends React.Component<{}, IItemsState> {
+export class ItemsCard extends React.Component<{}, IItemsState> {
     constructor(args) {
         super(args);
         this.state = { items: [] };
@@ -64,24 +64,4 @@ class ItemsCard extends React.Component<{}, IItemsState> {
         );
     }
 }
-console.log("initializing the card");
-var myCourse = ReactDOM.render(<ItemsCard />, document.getElementById("myCourses")) as ItemsCard;
-debugger;
-var courses: IItemProp[] = [];
-courses.push({
-    description: "I haven't finished this one, but so far it seems interesting. It's nice having a primer on HTML5 and CSS3.", link: "#", rating: 4, title: "Front-End Web Development Quick Start With HTML5, CSS, and JavaScript"
-});
-courses.push({
-    description: "I haven't finished this one, but so far it seems interesting. It's nice having a primer on HTML5 and CSS3.", link: "#", rating: 4, title: "Front-End Web Development Quick Start With HTML5, CSS, and JavaScript"
-});
-courses.push({
-    description: "I haven't finished this one, but so far it seems interesting. It's nice having a primer on HTML5 and CSS3.", link: "#", rating: 4, title: "Front-End Web Development Quick Start With HTML5, CSS, and JavaScript"
-});
-courses.push({
-    description: "I haven't finished this one, but so far it seems interesting. It's nice having a primer on HTML5 and CSS3.", link: "#", rating: 4, title: "Front-End Web Development Quick Start With HTML5, CSS, and JavaScript"
-});
-courses.push({
-    description: "I haven't finished this one, but so far it seems interesting. It's nice having a primer on HTML5 and CSS3.", link: "#", rating: 4, title: "Front-End Web Development Quick Start With HTML5, CSS, and JavaScript"
-});
-console.log("updating the card");
-myCourse.updateData(courses);
+

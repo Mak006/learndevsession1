@@ -3,8 +3,11 @@
 // https://github.com/Microsoft/TypeScript/wiki/JSX
 
 /// <reference path="../../typings/react/react-global.d.ts" />
+/// <reference path="../../typings/dojo/dojo.d.ts" />
 
-interface IFriendProps {
+import xhr = require("dojo/request/xhr");
+
+export interface IFriendProps {
     id?: number,
     initials: string,
     name: string,
@@ -13,11 +16,11 @@ interface IFriendProps {
     key?:number
 }
 
-interface IFriendsProps {
+export interface IFriendsProps {
     initialData: IFriendProps[]
 }
 
-class FriendCard extends React.Component<IFriendProps, {}> {
+export class FriendCard extends React.Component<IFriendProps, {}> {
     render() {
         return (
             <div className="friend">
@@ -34,10 +37,34 @@ class FriendCard extends React.Component<IFriendProps, {}> {
     }
 }
 
-class Friends extends React.Component<IFriendsProps, {}> {
+export class Friends extends React.Component<IFriendsProps, {}> {
+    state = {
+        data: this.props.initialData
+    }
+    getData() {
+        let options: any = {
+            handleAs: "json",
+            headers: {
+                "X-Requested-With": null
+            }
+        };
+        let promise = xhr.get("http://learndevapi.azurewebsites.net/api/Friends", options);
+        promise.then((data:any[]) => {
+            data = data.map((value, idx) => {
+                value.courseCount = value.coursesCount;
+                value.articleCount = value.articlesCount;
+                return value;
+            });
+            this.setState({
+                data: data
+            });
+        }, () => {
+            console.log("error with the call");
+        });
+    }
     render() {
         let friendsList:any[] = [];
-        this.props.initialData.forEach((frd, idx) => {
+        this.state.data.forEach((frd, idx) => {
             friendsList.push(<FriendCard key={frd.id} initials={frd.initials} name={frd.name} courseCount={frd.courseCount} articleCount={frd.articleCount}  />);
         });
 
@@ -50,13 +77,6 @@ class Friends extends React.Component<IFriendsProps, {}> {
     }
 }
 
-var friendsData: IFriendProps[] = [
-    { id: 1, name: "Homer Simpson", initials: "HS", courseCount: 32, articleCount: 19 },
-    { id: 2, name: "Marge Simpson", initials: "MS", courseCount: 22, articleCount: 13 },
-    { id: 3, name: "Bart Simpson", initials: "BS", courseCount: 12, articleCount: 10 }
-];
-
-ReactDOM.render(<Friends initialData={friendsData} />, document.getElementById('friendsNode'));
 //ReactDOM.render(<FriendCard initials="LP" name="Last Person" articleCount={14} courseCount={33} />, document.getElementById('test'));
 
 

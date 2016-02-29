@@ -192,6 +192,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="scripts\app\friends.tsx" />
     <TypeScriptCompile Include="scripts\app\items.tsx" />
+    <TypeScriptCompile Include="scripts\app\main.tsx" />
     <TypeScriptCompile Include="scripts\app\profile.tsx" />
   </ItemGroup>
   <ItemGroup>
@@ -207,7 +208,7 @@
     <TypeScriptJSXEmit>React</TypeScriptJSXEmit>
     <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
     <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
-    <TypeScriptModuleKind>None</TypeScriptModuleKind>
+    <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
     <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
     <TypeScriptOutFile />
     <TypeScriptOutDir />

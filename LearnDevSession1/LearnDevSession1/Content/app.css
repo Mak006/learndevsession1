@@ -11,8 +11,12 @@ header, footer {
 .navbar-default {
     background-color: #26549c;
     border: 0px;
+    padding: 50px 0px;
+    transition: padding 0.5s;
 }
-
+.scrolled {
+    padding: 0px 0px;
+}
 .navbar-default .navbar-brand {
     color: #fff;
 }
@@ -23,7 +27,7 @@ header, footer {
     margin-right: 5px;
 }
 .content {
-    margin-top: 50px;
+    margin-top: 150px;
 }
 .anchor {
     visibility: hidden;
